@@ -1,0 +1,48 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 720" fill="none">
+  <defs>
+    <linearGradient id="coralGlow" x1="920" y1="120" x2="1350" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF8A5B" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#FF8A5B" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="blueGlow" x1="780" y1="80" x2="1300" y2="650" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DCE7F2" stop-opacity=".75"/>
+      <stop offset="1" stop-color="#DCD6F7" stop-opacity=".15"/>
+    </linearGradient>
+    <pattern id="fineDots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#697FA6" fill-opacity=".15"/>
+    </pattern>
+  </defs>
+
+  <!-- Soft color fields -->
+  <path d="M710 0H1440V720H880C1070 575 1090 435 980 325C870 215 770 180 710 0Z"
+        fill="url(#blueGlow)"/>
+  <path d="M1050 0H1440V720H1190C1310 570 1280 450 1180 355C1080 260 1010 150 1050 0Z"
+        fill="url(#coralGlow)"/>
+
+  <!-- Fine flowing waves -->
+  <g stroke="#697FA6" stroke-opacity=".19" stroke-width="1.25">
+    <path d="M560 -80C740 105 650 230 835 340S1120 475 1050 800"/>
+    <path d="M595 -80C775 105 685 230 870 340S1155 475 1085 800"/>
+    <path d="M630 -80C810 105 720 230 905 340S1190 475 1120 800"/>
+    <path d="M665 -80C845 105 755 230 940 340S1225 475 1155 800"/>
+    <path d="M700 -80C880 105 790 230 975 340S1260 475 1190 800"/>
+    <path d="M735 -80C915 105 825 230 1010 340S1295 475 1225 800"/>
+    <path d="M770 -80C950 105 860 230 1045 340S1330 475 1260 800"/>
+    <path d="M805 -80C985 105 895 230 1080 340S1365 475 1295 800"/>
+  </g>
+
+  <!-- Broad organic wave contours -->
+  <g stroke="#FF8A5B" stroke-opacity=".35" stroke-width="1.5">
+    <path d="M860 -60C1030 110 880 240 1080 365S1370 490 1280 780"/>
+    <path d="M900 -60C1070 110 920 240 1120 365S1410 490 1320 780"/>
+    <path d="M940 -60C1110 110 960 240 1160 365S1450 490 1360 780"/>
+  </g>
+
+  <!-- Subtle dotted detail -->
+  <path d="M1100 80H1400V390H1100Z" fill="url(#fineDots)" opacity=".55"/>
+
+  <!-- Minimal coral accent -->
+  <circle cx="1230" cy="170" r="5" fill="#FF8A5B" fill-opacity=".8"/>
+  <circle cx="1230" cy="170" r="13" stroke="#FF8A5B" stroke-opacity=".25"/>
+</svg>

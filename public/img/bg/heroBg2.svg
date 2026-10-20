@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 700" fill="none" preserveAspectRatio="xMidYMid slice" class="w-full h-full select-none pointer-events-none">
+  <defs>
+    <style>
+      .orb-1 {
+        animation: floatOne 16s ease-in-out infinite;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+      .orb-2 {
+        animation: floatTwo 20s ease-in-out infinite;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+      .orb-3 {
+        animation: floatThree 18s ease-in-out infinite;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+      .ribbon-drift {
+        animation: ribbonWave 14s ease-in-out infinite;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+      .ring-spin {
+        animation: slowOrbit 28s linear infinite;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+      .dots-breathe {
+        animation: dotsFloat 10s ease-in-out infinite;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+
+      @keyframes floatOne {
+        0%, 100% { transform: translate(0px, 0px) scale(1); }
+        50% { transform: translate(35px, -25px) scale(1.08); }
+      }
+      @keyframes floatTwo {
+        0%, 100% { transform: translate(0px, 0px) scale(1); }
+        50% { transform: translate(-40px, 30px) scale(1.06); }
+      }
+      @keyframes floatThree {
+        0%, 100% { transform: translate(0px, 0px) scale(1); }
+        50% { transform: translate(25px, 35px) scale(0.94); }
+      }
+      @keyframes ribbonWave {
+        0%, 100% { transform: rotate(28deg) translateX(0px); opacity: 0.85; }
+        50% { transform: rotate(26.5deg) translateX(-18px); opacity: 1; }
+      }
+      @keyframes slowOrbit {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes dotsFloat {
+        0%, 100% { transform: translateY(0px); opacity: 0.3; }
+        50% { transform: translateY(-10px); opacity: 0.55; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .orb-1, .orb-2, .orb-3, .ribbon-drift, .ring-spin, .dots-breathe {
+          animation: none !important;
+        }
+      }
+    </style>
+
+    <!-- Soft Blur for Ambient Mesh Orbs -->
+    <filter id="ambient-blur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="85" />
+    </filter>
+
+    <!-- Diagonal Pastel Ribbon Gradient -->
+    <linearGradient id="pastel-ribbon" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="var(--color-pure-cloud, #FFFFFF)" stop-opacity="0" />
+      <stop offset="20%" stop-color="var(--color-coral, #FF8A5B)" stop-opacity="0.12" />
+      <stop offset="55%" stop-color="var(--color-lavender, #DCD6F7)" stop-opacity="0.48" />
+      <stop offset="85%" stop-color="var(--color-cloud-blue, #DCE7F2)" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="var(--color-cloud, #F8F3EF)" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Accent Tech Ring Gradient -->
+    <linearGradient id="ring-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--color-pure-cloud, #FFFFFF)" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="var(--color-lavender, #DCD6F7)" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="var(--color-coral, #FF8A5B)" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Right-Side Dot Grid Pattern -->
+    <pattern id="dot-grid" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="var(--color-muted, #77736F)" />
+    </pattern>
+
+    <!-- Seamless Body Fade Mask (fades edges smoothly into --color-cloud) -->
+    <linearGradient id="edge-fade-v" x1="0" y1="0" x2="0" y2="700" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="white" stop-opacity="0.4" />
+      <stop offset="15%" stop-color="white" stop-opacity="1" />
+      <stop offset="80%" stop-color="white" stop-opacity="1" />
+      <stop offset="100%" stop-color="black" stop-opacity="0" />
+    </linearGradient>
+
+    <mask id="seamless-blend">
+      <rect width="1440" height="700" fill="url(#edge-fade-v)" />
+    </mask>
+  </defs>
+
+  <!-- All elements wrapped in the seamless mask so they melt into body (#F8F3EF) -->
+  <g mask="url(#seamless-blend)">
+    
+    <!-- 1. Floating Ambient Color Orbs -->
+    <g filter="url(#ambient-blur)">
+      <!-- Top-Left Pure Cloud & Coral Warmth -->
+      <circle class="orb-1" cx="280" cy="220" r="220" fill="var(--color-pure-cloud, #FFFFFF)" fill-opacity="0.85" />
+      <circle class="orb-2" cx="340" cy="240" r="160" fill="var(--color-coral, #FF8A5B)" fill-opacity="0.13" />
+
+      <!-- Bottom-Left Soft Lavender Pool -->
+      <circle class="orb-3" cx="220" cy="520" r="210" fill="var(--color-lavender, #DCD6F7)" fill-opacity="0.55" />
+
+      <!-- Right-Side Product Halo (Cloud Blue + Subtle Highlight) -->
+      <circle class="orb-1" cx="1020" cy="360" r="250" fill="var(--color-cloud-blue, #DCE7F2)" fill-opacity="0.65" />
+      <circle class="orb-2" cx="1140" cy="200" r="180" fill="var(--color-coral, #FF8A5B)" fill-opacity="0.14" />
+      <circle class="orb-3" cx="940" cy="480" r="150" fill="var(--color-highlight, #7C5CFC)" fill-opacity="0.07" />
+    </g>
+
+    <!-- 2. Animated Diagonal Pastel Ribbon (Behind Hero Product) -->
+    <rect class="ribbon-drift" x="880" y="-180" width="340" height="1050" rx="170" fill="url(#pastel-ribbon)" />
+
+    <!-- 3. Stylish Minimalist Orbit Ring (Frames the Product Area) -->
+    <g class="ring-spin" style="transform-origin: 980px 340px;">
+      <circle cx="980" cy="340" r="215" stroke="url(#ring-stroke)" stroke-width="1.5" stroke-dasharray="12 8" />
+      <circle cx="980" cy="125" r="4" fill="var(--color-coral, #FF8A5B)" fill-opacity="0.45" />
+      <circle cx="1195" cy="340" r="3" fill="var(--color-highlight, #7C5CFC)" fill-opacity="0.35" />
+    </g>
+
+    <!-- 4. Gently Floating Dot-Matrix Accent -->
+    <rect class="dots-breathe" x="1220" y="290" width="154" height="98" fill="url(#dot-grid)" />
+  </g>
+</svg>

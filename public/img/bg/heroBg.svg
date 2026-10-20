@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 650" fill="none" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Base Gradient -->
+    <linearGradient id="base-grad" x1="0" y1="0" x2="1440" y2="650" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="55%" stop-color="#F8F3EF" />
+      <stop offset="100%" stop-color="#EAE5E1" />
+    </linearGradient>
+
+    <!-- Diagonal Ribbon Gradient -->
+    <linearGradient id="ribbon-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF8A5B" stop-opacity="0.11" />
+      <stop offset="50%" stop-color="#DCD6F7" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#FF8A5B" stop-opacity="0.12" />
+    </linearGradient>
+
+    <!-- Soft Blur Filter for Ambient Orbs -->
+    <filter id="soft-blur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="80" />
+    </filter>
+
+    <!-- Dot Matrix Pattern -->
+    <pattern id="dot-matrix" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#77736F" fill-opacity="0.22" />
+    </pattern>
+  </defs>
+
+  <!-- 1. Cloud Base -->
+  <rect width="1440" height="650" fill="url(#base-grad)" />
+
+  <!-- 2. Ambient Pastel Glows -->
+  <g filter="url(#soft-blur)">
+    <!-- Warm Coral Glow (Left-Center) -->
+    <circle cx="340" cy="230" r="180" fill="#FF8A5B" fill-opacity="0.14" />
+    <!-- Lavender Glow (Bottom-Left) -->
+    <circle cx="200" cy="560" r="220" fill="#DCD6F7" fill-opacity="0.6" />
+    <!-- Cloud Blue Glow (Center-Right) -->
+    <circle cx="1020" cy="420" r="240" fill="#DCE7F2" fill-opacity="0.65" />
+    <!-- Warm Coral Glow (Top-Right) -->
+    <circle cx="1240" cy="140" r="200" fill="#FF8A5B" fill-opacity="0.15" />
+  </g>
+
+  <!-- 3. Diagonal Pastel Beam -->
+  <rect x="920" y="-220" width="370" height="1100" transform="rotate(28 920 -220)" fill="url(#ribbon-grad)" />
+
+  <!-- 4. Right-Side Dot Grid -->
+  <rect x="1230" y="270" width="168" height="98" fill="url(#dot-matrix)" />
+</svg>
